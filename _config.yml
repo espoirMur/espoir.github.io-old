@@ -4,10 +4,9 @@ email: espoir.mur@gmail.Com
 description: My Blog , a short description of me and stuff I'm working on
 
 # social links
-twitter_username: @EspyMur
-github_username:  @espoirMur
-stackoverflow_username: espoir-murhabazi
-medium_username: @EspyMur
+#twitter_username: @EspyMur
+#github_username:  @espoirMur
+#stackoverflow_username: espoir-murhabazi
+#medium_username: @EspyMur
 show_excerpts: true # set to false to remove excerpts on the homepage
-
 theme: minima 
