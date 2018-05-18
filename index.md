@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -25,10 +24,6 @@
             <a target="_blank" href="https://stackoverflow.com/users/4683950/espoir-murhabazi"><i class="fab fa-stack-overflow"></i></a>
             <a target="_blank" href="https://www.linkedin.com/in/murhabazi-buzina-7849b1b1/"><i class="fab fa-linkedin"></i></a>
             <a target="_blank" href="https://medium.com/@EspyMur"><i class="fab fa-medium"></i></a>
-            <a href="https://dev.to/espymur">
-  <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Espoir Murhabazi's DEV Profile" height="30" width="30" />
-</a>
-        
     </div>
     </main>
 </body>
