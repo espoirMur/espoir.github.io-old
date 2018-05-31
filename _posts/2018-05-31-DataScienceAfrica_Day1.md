@@ -1,41 +1,54 @@
 # Fundemental of IOT session
 
-I finally landed to Nyeri after a long trip of more than 1000 km by us .I think I should write a blog post the trip too.
+I finally landed to Nyeri after a long trip of more than 1000 km by bus .I think I should write a blog post the trip too.
 
 But let me talk about serious things first.
 
-Later that year i applied to the data science summer school which is organized with data science africa and I had the privelge to
+Later that year I applied to the data science summer school which is organized with data science africa and I had the privelge to
 be among the few people who was selected to attend the event.
 The summer school is a workshop where suddent are trained about data science and their pratical application.
 you can fouund more about the 2018 event [here](http://www.datascienceafrica.org/dsa2018/).
 
-The theme of this year workshop is : _end-to-end data science._ .
+The theme of this year workshop is : **_End-to-end data science._** and it took place at [Dedan kimati university of science and technology in Nyeri](https://www.dkut.ac.ke/).
 
-The day one start with a brief introduction to data science done by : 
+We started with a brief introduction to data science done by : 
 **Dina Machuve**  from  Nelson Mandela African Institute of Science and Technology
 she gaves us a short introduction on data science and explain us the difference between Machine learning and data science(the famous debate)
 
-The Good thing started when **Jan Jongboom** from ARM started his lecture about **Fundamentals of IoT**
-i was still wondering what IOT has to do with data science and machine learning but he gives me clarification when he said that :
+The intresting stuffs  started when **Jan Jongboom** from ARM begun his lecture about **Fundamentals of IoT**
+i was confused on  what IOT has to do with data science and machine learning but he gives me clarification when he said that :
 
-__Playing with machine learning models is fun but...
-but data acquisition is even more important__
+**_Playing with machine learning models is fun but...
+but data acquisition is even more important_** ch
 
-Today we are going to learn how to collect data with sensor .
+He give us an introduction to data collection with sensors.
 
-He talked us about ARM devices for data collection, 
-we learned about the ARM MBED micro controller, loaWAN connectivity kits and some sensor used by ARM?
+He talked us about ARM devices for data collection :
+We played with 4 devices we are going to use for data collection:
+- we learned about the ARM MBED micro controller whith the [NUCLEO F446RE board](http://www.st.com/en/evaluation-tools/nucleo-f446re.html) similar to arduino , 
+- LoRaWAN connectivity shield basically it allows for things to talk to the internet without 3G or WiFi. So no WiFi codes and no mobile subscriptions.
+- the moisure sensor 
+- and the humidity and temperature sensor
 
-We started pratical session , and it was about to set up account on arm site and make some simullation with the ARM (micro controller  which was pretty to arduino 
-micro controller we have used at school).
+In the first part of the pratical session we learned how to connect the differents componements , connect it to the [think network](https://www.thethingsnetwork.org/) dashboard and played with some simulation on theirs online IDE.
+After the first part we was able to build a full working kit.
+{% twitter 
+https://twitter.com/EspyMur/status/1002135942826790912
+%}
 
-Before the break my kit was ready and was able to collect noisure data .
 
-(Put the picture here)
+After the break we went to the field to start collecting data in real life.
+The goal of this session was to discovered how to use data sceince to improve agriculture in africa and collect real data about real african problem.
+Before deploying ours kit we spoke to the farmers and she told us what problem they are facing and how internet of things could help them.
+we noticed that they are actually in need of chlorophylle sensor.
+then we deployed our kits in the tomatoes green house and connect them to thing network
 
-After the break we went to the field collecting data in real live.
+{%twitter
+https://twitter.com/DCivin/status/1002210061010243584
+%}
 
-We deployed the sensors in the tomatoes greenhosue .
-We use a kit with 3 sensors temperature sensor, moisure sensor and humidity sensor, and lorawifi shield, we deployed them and started collected the data .
+The data was directly being saved in an ElasticSearch database and visualised via Kibana platfeform (In the comming days data engineers from ARM will explain us  the whole process of collecting data from sensorto kibana plateform.)
 
-The data was directly being saved in an ElasticSearch database and visualised via Kibana platfeform (In the comming days data engineers from ARM will tell us how the whole process of collecting data from sensor  to kibana plateform will be explained tommorow.)
+That was all for today workshop, we learned a lot specially about the electronic behind data science, I also learned that we can now run tensorflow on micro controller with a open source plateform called utensorflow.
+If you are intrested in electronic and Machine learning fill free to check out their [github repos](http://utensor.ai/).
+See you tommorow for the next session.
