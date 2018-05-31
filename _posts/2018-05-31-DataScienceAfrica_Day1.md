@@ -38,4 +38,4 @@ After the break we went to the field collecting data in real live.
 We deployed the sensors in the tomatoes greenhosue .
 We use a kit with 3 sensors temperature sensor, moisure sensor and humidity sensor, and lorawifi shield, we deployed them and started collected the data .
 
-The data was directly being saved in an ElasticSearch database and visualised via platfeform (In the comming days data engineers from ARM will tell us how the whole process of collecting data from sensor  to kibana plateform will be explained tommorow.)
+The data was directly being saved in an ElasticSearch database and visualised via Kibana platfeform (In the comming days data engineers from ARM will tell us how the whole process of collecting data from sensor  to kibana plateform will be explained tommorow.)
