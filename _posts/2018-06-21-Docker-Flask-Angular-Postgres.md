@@ -29,7 +29,7 @@ but it doesn't works also.
 
 keep debugging 
 
-**3rd attempt **:
+**3rd attempt**:
 
 I go and read about race condition with the python app and the docker container [here](https://github.com/arachnys/cabot/issues/416)
 I need to write a python script that check if the port is open , but the script doesn't work also.
@@ -41,7 +41,7 @@ sound like.
 let go deeper
 [This user](https://stackoverflow.com/q/49325745/4683950) also have the same error
 
-**4th attempt **
+**4th attempt:**
 
 usinng this url schema
 
