@@ -50,7 +50,11 @@ postgresql://testusr:password@postgres:5432/testdb
 [this](https://stackoverflow.com/a/48422901/4683950) question gives also another explanation it said :
 Postgres is not running in the same container as the flask application, that why it can not be acceded via localhost .
 we should find the ip adress of the docker container with flask and add it , or just add __postgres__  or _volume_name_ in place of localhost.
-You could also point to the docker bridge ip which usually is 172.17.0.1.
+And finaly this solve my problem.
+Okey...
+
+####I'm safe now
+
 
 
 
