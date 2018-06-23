@@ -109,3 +109,7 @@ the callable is our application imported in the first lign of wsgi.py
 the application is runned in 2 threads of 4 processes.
 
 for ssl and https i should read [this](http://nginx.org/en/docs/http/configuring_https_servers.html)
+
+
+
+and now [the following tutorial](https://realpython.com/dockerizing-flask-with-compose-and-machine-from-localhost-to-the-cloud/) gives step by step instruction to deploy to digital ocean 
