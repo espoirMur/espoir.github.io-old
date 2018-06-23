@@ -113,3 +113,17 @@ for ssl and https i should read [this](http://nginx.org/en/docs/http/configuring
 
 
 and now [the following tutorial](https://realpython.com/dockerizing-flask-with-compose-and-machine-from-localhost-to-the-cloud/) gives step by step instruction to deploy to digital ocean 
+
+
+I managed to mak it work but once in digital ocean i start getting 
+502 errros bad gateway:
+
+How to fix it?
+https://stackoverflow.com/a/47091862/4683950
+
+in nginx.conf
+
+server name and proxy pass should be the same
+
+remove the dns config
+
