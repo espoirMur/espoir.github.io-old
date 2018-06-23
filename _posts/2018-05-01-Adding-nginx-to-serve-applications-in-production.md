@@ -90,13 +90,14 @@ here is how our configuration look like
 ```
 [uwsgi]
 http-socket = 0.0.0.0:8000
-#for the docker configuration 
-chdir = /api
-wsgi-file = /api/wsgi.py
+#for the docker configuration
+chdir = /api/api
+wsgi-file = wsgi.py
 callable = application
 processes = 4
 threads = 2
 stats = 0.0.0.0:9191
+
 ```
  
 the first lign tell to use http-socket at the localhost with the port.
