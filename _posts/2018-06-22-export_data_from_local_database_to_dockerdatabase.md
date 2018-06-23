@@ -29,7 +29,7 @@ made a mistake to populate it via sql alchemy yesterday so I was obliged to dele
 
 here is the syntax :
 
-pg_restore -U <username> -d <dbname> -1 <filename>.sql.
+pg_restore -U username -d dbname -1 filename.sql.
 
 And now all files are inside the docker psql database.
 
