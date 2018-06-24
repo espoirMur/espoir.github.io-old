@@ -127,3 +127,141 @@ server name and proxy pass should be the same
 
 remove the dns config
 
+okey ! the next day i decide to learn how nginx config works on digital ocean.
+started with [this](https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts)
+
+
+so my nginx.config should look like this .
+
+```
+http {
+
+    # http context
+
+    server {
+
+        # first server context
+
+    }
+
+ http {
+
+    # http context
+
+    server {
+
+        # first server context
+
+    }
+
+    server {
+
+        # second server context
+
+    }
+
+}
+
+
+}
+```
+
+then going to add the following ligns in the sever block.
+
+- **listen:** The ip address / port combination that this server block is designed to respond to. 
+If a request is made by a client that matches these values, this block will potentially be selected to handle the connection.
+
+- **server_name:** This directive is the other component used to select a server block for processing.
+If there are multiple server blocks with listen directives of the same specificity that can handle the request,
+Nginx will parse the "Host" header of the request and match it against this directive.
+
+so in listen i have to put the ip adress of my digital ocean dyno and the port 80 where nginx is running.
+listen         139.59.162.16:80;
+
+NB : i noticed that i  had 2 listen blocks in my config, may be that is why it was not working.
+so let kee investigating?
+
+**serv_name** it not understood yet, still confusing.
+
+
+The next is the location context.
+this is what is said there :
+
+_each location is used to handle a certain type of client request, 
+and each location is selected by virtue of matching the location definition against the client request through a selection algorithm._
+
+
+here are others important information about server and location.
+
+
+While server contexts are selected based on the requested IP address/port combination and the host name in the "Host" header, 
+location blocks further divide up the request handling within a server block by looking at the request URI. 
+The request URI is the portion of the request that comes after the domain name or IP address/port combination.
+
+So, if a client requests http://www.example.com/blog on port 80, the http, www.example.com, and port 80 would all be used to determine which server block to select. After a server is selected, the /blog portion (the request URI), would be evaluated against the defined locations to determine which further context should be used to respond to the request.
+
+acccording to that information here is how my .config file looks like
+```
+  location / {
+              proxy_pass http://139.59.162.16:8080;
+              include  /etc/nginx/mime.types;
+              root   /usr/share/nginx/html;
+               index  index.html index.htm;
+           }
+  #all request staring with adra and api are passed to the backend
+           location /api {
+                 proxy_pass          http://0.0.0.0:8000;
+                 proxy_set_header        Host $host;
+           }
+
+           location /adra {
+                 proxy_pass          http://0.0.0.0:8000;
+                 proxy_set_header        Host $host;
+           }
+           # to load css and javascript
+           location ~ \.css {
+               add_header  Content-Type    text/css;
+           }
+           location ~ \.js {
+               add_header  Content-Type    application/x-javascript;
+           }
+
+```
+
+I have 4 location; 
+
+the 2 with both /api , /adra are related to the api in the flask file
+
+the second location I added them when I was trying to solve a problem of css files they was not read , and was served as text files.
+
+Now need to understedn th proxy_pass thing , may be that is why I'm getting the 502 error.
+
+[Here](http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass)
+
+__Sets the protocol and address of a proxied server and an optional URI to which a location should be mapped. As a protocol, “http” or “https” can be specified. The address can be specified as a domain name or IP address, and an optional port:__
+
+
+for the docker and nginx i head about the reverse proxy thing .
+
+
+found this recent question I'm sure it give the answer to my problem.
+
+__For those that weren't aware, whenever you use docker-compose up, it automatically creates a default docker network if you don't specify any in the docker-compose.yaml. Docker containers in the same network automatically get a DNS entry created for the container name. 
+That means you can access the other containers in the network using something like http://mycontainername:8080.__
+
+it means that in the proxy pass should be the adress on which you app are acccesible inside the docker.
+
+for my case for the flask app I change it to  http://api:8000 and for nginx it need to be changed to :
+http://nginx_demo:8080
+
+or the ip adress of the server host
+
+
+Was using the wrong machine ip adress .
+
+now 
+
+
+  
+
+
