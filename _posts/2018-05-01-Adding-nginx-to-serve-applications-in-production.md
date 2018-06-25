@@ -260,8 +260,23 @@ or the ip adress of the server host
 Was using the wrong machine ip adress .
 
 now 
+getting 502 error acces not authorise:
+removed the proxy_pass in the location /
+
+gettinng 403 error adding right file right
+
+now files are not served .
+
+the problem is with nginx it's looking for file in /etc/nginx/
+while all my file are in 
+
+/usr/share/nginx/html
+
+
+attend to find the solution here by changing the way files are server in .config
+
+https://docs.nginx.com/nginx/admin-guide/web-server/serving-static-content/
+
 
 
   
-
-
