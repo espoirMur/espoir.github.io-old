@@ -8,15 +8,14 @@ I was told me to use nginx server.
 but don' have any clue about nginx and how it works .
 so let me understand how it works and try to make it work for me .
 hope will not send many hours on this as i do in the past parts.
+the goal was to deploy the side with docker containers in production to digital ocean.
 
-- 1 the flask app
 
+## Part One : The flask app should be serve by wsgi
+### First attempt
+Following [this](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04) tuto
 
-# the flask app should be serve by wsgi
-
-following [this](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04) tuto
-
-create a wsqgi file and run the application like this :
+create a wsgi file and run the application like this :
 
 ```python
 from run import app as application
@@ -34,51 +33,25 @@ Then we create .ini config file for the project;
 
 Let's place that in our project directory and call it myproject.ini:
 
-/Users/guillaumesayinzoga/espoir-stuff/adra-hr-application/api
+I was create all the files and tried to run the project with this command :
 
-
-
-nginx is serving the angular files.
-
-https://stackoverflow.com/a/45297119/4683950
-
-
-
-https://dzone.com/articles/dockerizing-angular-app-via-nginxsnippet
-
-
-
-
- 
- https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#deploying-django
- 
- 
- 2018/06/22 16:06:45 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:1
- 
- uwsgi: unrecognized option '--chdir api/'
- 
- #for the nginx with angular it working now..
- but how to work the uwsgi with python??
- 
- I run into the following error :
- to start the wsgi file from parent directory
-
- sudo uwsgi --chdir api/ --ini api/api.ini
- 
- nothing was fixed .
- ***went back to the uwsgi doc **
+  ``` uwsgi --chdir api/ --ini api/api.ini```
+  
+I run into the following error :
+To start the wsgi file from parent directory
+but how to work the uwsgi with python??
+After googling I found a good advice and they suggested my to go back to the doc and read how uwsgi works.
+**Here are my findings.:***
  [here](http://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html)
+
  
- read more and understand how the uwsgi works and was able to configure the project well.
- 
-uwsgi is an application server for hosting python application for production.
+- uwsgi is an application server for hosting python application for production.
 
-The uWSGI project aims at developing a full stack for building hosting services.
+- he uWSGI project aims at developing a full stack for building hosting services.
 
-Application servers (for various programming languages and protocols), proxies, process managers and monitors are all implemented using a common api and a common configuration style.
+- Application servers (for various programming languages and protocols), proxies, process managers and monitors are all implemented using a common api and a common configuration style.
 
-
-here is what is said in his documentation.
+Here is what is said in his documentation.
 
 *The uWSGI project aims at developing a full stack for building hosting services.
 Application servers (for various programming languages and protocols), proxies, process managers and monitors are all implemented using a common api and a common configuration style.*
@@ -97,27 +70,30 @@ callable = application
 processes = 4
 threads = 2
 stats = 0.0.0.0:9191
-
 ```
- 
-the first lign tell to use http-socket at the localhost with the port.
+The first line tell to use http-socket at the localhost with the port.
 we are not going to use http because we are serving our frontend by another server.
 
-chdir : tell the working directory of our project
+chdir : tell the working directory of our project(The working direcory refer to the application folder in the docker container)
 wsgi : to specifie  our wsgi file
-the callable is our application imported in the first lign of wsgi.py 
-the application is runned in 2 threads of 4 processes.
+callable :  is our application imported in the first lign of wsgi.py 
+Application is runned in 2 threads of 4 processes.
 
-for ssl and https i should read [this](http://nginx.org/en/docs/http/configuring_https_servers.html)
+For ssl and https i should read [this](http://nginx.org/en/docs/http/configuring_https_servers.html)
+and now [the following tutorial](https://realpython.com/dockerizing-flask-with-compose-and-machine-from-localhost-to-the-cloud/) gives step by step instruction to deploy to digital ocean .
+With this the flask application was running and now I need to work on the frontend part.
 
+# Part Two : nginx is serving the angular files.
+[Ressources 1](https://stackoverflow.com/a/45297119/4683950), [Ressources 2](https://dzone.com/articles/dockerizing-angular-app-via-nginxsnippet)
 
-
-and now [the following tutorial](https://realpython.com/dockerizing-flask-with-compose-and-machine-from-localhost-to-the-cloud/) gives step by step instruction to deploy to digital ocean 
-
-
-I managed to mak it work but once in digital ocean i start getting 
+  #for the nginx with angular it working now..
+ I managed to mak it work but once in digital ocean i start getting 
 502 errros bad gateway:
 
+It was due to a bad configuration in the .config file of nginx
+ 
+nothing was fixed .
+ 
 How to fix it?
 https://stackoverflow.com/a/47091862/4683950
 
@@ -129,7 +105,6 @@ remove the dns config
 
 okey ! the next day i decide to learn how nginx config works on digital ocean.
 started with [this](https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts)
-
 
 so my nginx.config should look like this .
 
@@ -166,7 +141,7 @@ http {
 }
 ```
 
-then going to add the following ligns in the sever block.
+Then going to add the following ligns in the sever block.
 
 - **listen:** The ip address / port combination that this server block is designed to respond to. 
 If a request is made by a client that matches these values, this block will potentially be selected to handle the connection.
@@ -175,13 +150,13 @@ If a request is made by a client that matches these values, this block will pote
 If there are multiple server blocks with listen directives of the same specificity that can handle the request,
 Nginx will parse the "Host" header of the request and match it against this directive.
 
-so in listen i have to put the ip adress of my digital ocean dyno and the port 80 where nginx is running.
-listen         139.59.162.16:80;
+~~so in listen i have to put the ip adress of my digital ocean dyno and the port 80 where nginx is running.
+listen         16.8.98.88:80;~~ but it was not a god idea/
 
-NB : i noticed that i  had 2 listen blocks in my config, may be that is why it was not working.
-so let kee investigating?
+i noticed also that i  had 2 listen blocks in my config, may be that is why it was not working.
+so let keep investigating?
 
-**serv_name** it not understood yet, still confusing.
+**serv_name** it not understood yet, still confusing. NB : But this should be the server name configured in the dns
 
 
 The next is the location context.
@@ -234,7 +209,10 @@ the 2 with both /api , /adra are related to the api in the flask file
 
 the second location I added them when I was trying to solve a problem of css files they was not read , and was served as text files.
 
-Now need to understedn th proxy_pass thing , may be that is why I'm getting the 502 error.
+
+
+**Getting 502 error acces not authorise:**
+Now need to understedand n th proxy_pass thing , may be that is why I'm getting the 502 error.
 
 [Here](http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass)
 
@@ -242,9 +220,7 @@ __Sets the protocol and address of a proxied server and an optional URI to which
 
 
 for the docker and nginx i head about the reverse proxy thing .
-
-
-found this recent question I'm sure it give the answer to my problem.
+Found [this](https://stackoverflow.com/q/51009692/4683950) recent question, I'm sure it give the answer to my problem.
 
 __For those that weren't aware, whenever you use docker-compose up, it automatically creates a default docker network if you don't specify any in the docker-compose.yaml. Docker containers in the same network automatically get a DNS entry created for the container name. 
 That means you can access the other containers in the network using something like http://mycontainername:8080.__
@@ -252,31 +228,29 @@ That means you can access the other containers in the network using something li
 it means that in the proxy pass should be the adress on which you app are acccesible inside the docker.
 
 for my case for the flask app I change it to  http://api:8000 and for nginx it need to be changed to :
-http://nginx_demo:8080
+http://nginx_demo:8080.
+But I keep geeting the error, then I decided  Removed the proxy_pass in the location / directive.
 
-or the ip adress of the server host
-
-
-Was using the wrong machine ip adress .
-
-now 
-getting 502 error acces not authorise:
-removed the proxy_pass in the location /
-
-gettinng 403 error adding right file right
-
+Rerun the server and sart getting 403 error.
+**Gettinng 403 error adding right file right**
 now files are not served .
-
 the problem is with nginx it's looking for file in /etc/nginx/
-while all my file are in 
-
-/usr/share/nginx/html
-
-
+while all my file are in  /usr/share/nginx/html
 attend to find the solution here by changing the way files are server in .config
-
 https://docs.nginx.com/nginx/admin-guide/web-server/serving-static-content/
+Another tips to solve this problem was to modify the acess right of html folder.
+
+I did this in my comand in the docker config of nginx.
+
+```chmod -R 0755 /usr/share/nginx/html/```
+
+And I managed to solve the error of acess right on files.
+**Then I satrted getting a 404 errors for files not found**
+Again it was a problem with nginx config.
+
+I removed the root, index and in the / location directive and move them to server directive and it start serving statics files..
 
 
+after passing throught all those type of errors I was able to see the static files and index.html by the end of the day.
 
   
