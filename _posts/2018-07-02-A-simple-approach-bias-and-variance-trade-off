@@ -4,12 +4,12 @@ Okey let try to understand first the biais and variance and explain well the tra
 
 1. We All know that the error output off our model is alwasy define by :
 
-Err = (gD-f)
+Err = Ex (gD-f)
+Note that g depend on the dataset we are using , if we change the dataset g will be different.
+
 where g is our hypothesis function and f is the real function
 
 the error is equal to the difference between the predicted value and the expected value.
-
-this error depend on the dataset we have , 
 
 we can define the expected value of the error on the dataset we have
  
