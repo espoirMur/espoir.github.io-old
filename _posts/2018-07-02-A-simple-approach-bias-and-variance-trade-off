@@ -1,0 +1,33 @@
+#Bias and Variance Trade off 
+
+Okey let try to understand first the biais and variance and explain well the trade off betwwen the 2 concept 
+
+1. We All know that the error output off our model is alwasy define by :
+
+Err = (gD-f)
+where g is our hypothesis function and f is the real function
+
+the error is equal to the difference between the predicted value and the expected value.
+
+this error depend on the dataset we have , 
+
+we can define the expected value of the error on the dataset we have
+ 
+Err = ED(gD-f)
+
+let define the aerage hypothesis :
+
+when we get all the hyposthesis set from each dataset we can get, the average prediction made by all those hypothesis is called the average 
+hypothesis or g(bar)!
+
+and it's define by g(bar) = 1/K sum(G(x)dk) (Intuitively) (This if we imagine we have many dataset and we want to learn from them)
+or as E(D)gD(X)
+
+We an add and subtract gbar(from our error and get the following ):
+
+Err = ED(gD+g(bar)-(gbar)-f)^2
+
+We can explore this term by computing the power of 2 
+
+TO be continue......
+
