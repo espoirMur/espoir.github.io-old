@@ -1,0 +1,23 @@
+
+
+The first step is to install developer tools on the new laptop wihout installing Xcode (it's very large cannot afford to download it)
+
+- Open the terminal
+type the following one and follow the prompt :
+
+```
+xcode-select --install
+```
+
+follow [this link](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/) for a precise step by step guide .
+
+The second step is to get rid of the default mac terminal  and install a powerfull and customizable terminal;
+my choice is [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
+
+let install it we need curl :
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+and now let customize it to make it a beautifull terminal !
+
