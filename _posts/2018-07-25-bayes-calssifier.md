@@ -48,9 +48,9 @@ P(X=x|Y=1) x P(Y=1) > P(X=x|Y=0) x P(Y=0)
 \end{equation}
 P(X=x|Y=1) : Likelyhood of X given it came from class 1 
 P(Y=1) : prior of class 1
-$\begin{equation}
+$$\begin{equation}
 log\frac{P(X=x|Y=1) x P(Y=1)}{P(X=x|Y=0) x P(Y=0)} > 0
-\end{equation}$
+\end{equation}$$
 
 The last formula is called the log odds, 
 We can actually calculate it considering the fact that our data came from a multivariate gaussian.
