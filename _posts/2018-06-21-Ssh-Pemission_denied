@@ -1,0 +1,91 @@
+Most of the time want to cnnect via ssh to a remote laptop from my mac I get this error:
+
+
+```
+ssh root@10.**.**.**
+root@10.**.**.**'s password: 
+Permission denied, please try again.
+```
+
+I'm trying to figure out what is the problem.
+
+to debug I usually do :
+
+```
+ssh -v root@10.**.**.**
+```
+
+And mostly I found that it's a problem of certificate public certificates 
+
+
+```
+OpenSSH_7.6p1, LibreSSL 2.6.2
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 48: Applying options for *
+debug1: Connecting to 10.**.**.*** port 22.
+debug1: Connection established.
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/espoir_mur/.ssh/id_rsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/espoir_mur/.ssh/id_rsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/espoir_mur/.ssh/id_dsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/espoir_mur/.ssh/id_dsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/espoir_mur/.ssh/id_ecdsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/espoir_mur/.ssh/id_ecdsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/espoir_mur/.ssh/id_ed25519 type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/espoir_mur/.ssh/id_ed25519-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_7.6
+debug1: Remote protocol version 2.0, remote software version OpenSSH_7.2p2 Ubuntu-4ubuntu2.4
+debug1: match: OpenSSH_7.2p2 Ubuntu-4ubuntu2.4 pat OpenSSH* compat 0x04000000
+debug1: Authenticating to 10..**.***:22 as 'root'
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256@libssh.org
+debug1: kex: host key algorithm: ecdsa-sha2-nistp256
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ecdsa-sha2-nistp256 SHA256:b78TqTp9NDVomkuCtGqOoX9h3F8K6swUx+zMRayz334
+debug1: Host '10.**.**.***' is known and matches the ECDSA host key.
+debug1: Found key in /Users/espoir_mur/.ssh/known_hosts:3
+debug1: rekey after 134217728 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey after 134217728 blocks
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_input_ext_info: server-sig-algs=<rsa-sha2-256,rsa-sha2-512>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey,password
+debug1: Next authentication method: publickey
+debug1: Trying private key: /Users/espoir_mur/.ssh/id_rsa
+debug1: Trying private key: /Users/espoir_mur/.ssh/id_dsa
+debug1: Trying private key: /Users/espoir_mur/.ssh/id_ecdsa
+debug1: Trying private key: /Users/espoir_mur/.ssh/id_ed25519
+debug1: Next authentication method: password
+root@10.**.**.***'s password: 
+Connection closed by 10.**.**.*** port 22
+```
+
+How to solve it ???
+
+once of the best soluction is to find a way to login to the machine without ssh
+you can use either putty on wiindows or the host dashboard(eg: DigitalOcean if the remote machine is hosted at digitalocean )
+and edit this file `/etc/ssh/sshd_config`
+you can either use nano or any other text editor
+inside the file try to find the following line:
+
+```
+PasswordAuthentication no
+```
+
+and  replace the no with yes.
+close and restart the machine 
+then you can logged in the computer via ssh.
+Thanks to this [so](https://superuser.com/a/1308385/775057) answer
