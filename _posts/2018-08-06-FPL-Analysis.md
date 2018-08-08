@@ -9,8 +9,8 @@ With 4 days to go for FPL season and after more than 20 changes from my initial 
 **Fabiansky (Liverpool)**: I should expect some saves from him for the first game and check how He will perform for the next 3 fixtures
 
 
-˜**Leno(Keep Him on the bench )**: Arsenal looks like they will concede against man city but should have more good fixtures to come.
-A good history from Leverkusen.˜
+~~**Leno(Keep Him on the bench )**: Arsenal looks like they will concede against man city but should have more good fixtures to come.
+A good history from Leverkusen.~~
 
 ### Update 2 days after 
  So I decide to go for **foster** instead of Leno(Because foster has good opening fixtures and I will be rotating him with Fabiansky) and I will spend .5 on a mid
