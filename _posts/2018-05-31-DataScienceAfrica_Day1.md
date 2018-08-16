@@ -32,9 +32,7 @@ We played with 4 devices we are going to use for data collection:
 
 In the first part of the pratical session we learned how to connect the differents componements , connect it to the [think network](https://www.thethingsnetwork.org/) dashboard and played with some simulation on theirs online IDE.
 After the first part we was able to build a full working kit.
-- {% twitter 
-https://twitter.com/EspyMur/status/1002135942826790912
-%}
+- [check this tweet](https://twitter.com/EspyMur/status/1002135942826790912)
 
 
 After the break we went to the field to start collecting data in real life.
@@ -43,9 +41,7 @@ Before deploying ours kit we spoke to the farmers and she told us what problem t
 we noticed that they are actually in need of chlorophylle sensor.
 then we deployed our kits in the tomatoes green house and connect them to thing network
 
-- {%twitter
-https://twitter.com/DCivin/status/1002210061010243584
-%}
+- [check this tweet](https://twitter.com/DCivin/status/1002210061010243584) 
 
 The data was directly being saved in an ElasticSearch database and visualised via Kibana platfeform (In the comming days data engineers from ARM will explain us  the whole process of collecting data from sensorto kibana plateform.)
 
