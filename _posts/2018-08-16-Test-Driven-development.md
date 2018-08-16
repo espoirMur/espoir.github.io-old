@@ -8,6 +8,7 @@ For the first time the test should fail, and after failing you write simple code
 it works as you want.
 
 Developers know the cycle as _red, green, refractor_.
+
 ![TDD cycle (SOurce hacker noom)](pictures/TDD.png)
 
 As said by __Rudyard Kipling__ following the story [*__"Elephant's Child"__* in *__" Just So Stories"__*](http://members.optusnet.com.au/charles57/Creative/Techniques/elephants_child.htm)
