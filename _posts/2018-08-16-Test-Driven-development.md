@@ -21,6 +21,34 @@ As said by __Rudyard Kipling__ following the story [*__"Elephant's Child"__* in 
 So every time We are studying something new, We should always answer those 6 questions.
 
 So let Go
+## What 
+
+### what is TDD ?
+
+As said in the introduction
+
+Test-driven development (TDD) , is an evolutionary approach to development which combines test-first development where you write a test before you write just enough production code to fulfill that test and refactoring.   
+### What is the primary goal of TDD?  
+
+One view is the goal of TDD is **specification** and not validation .  In other words, it’s one way to think through your requirements or design before your write your functional code (implying that TDD is both an important agile requirements and agile design technique). Another view is that TDD is a programming technique.  As Ron Jeffries likes to say, the goal of TDD is to write clean code that works.
+
+[Source](http://agiledata.org/essays/tdd.html)
+
+###  TDD and Traditional Testing
+
+As already said TDD is a specification technique 
+
+With traditional testing a successful test finds one or more defects
+
+But with both you can find bugs in your system and  have a clear measure of success when test no longer fail.
+With both traditional testing and TDD you aren't striving for perfection, instead you are testing to the importance of the system.
+
+> If it's worth building, it's worth testing.
+> If it's not worth testing, why are you wasting your time working on it?
+
+In summary we can says we use TDD from the begining of development and it helps in all the software development lifecycle.
+
+Traditionnal testing help us to test a code that is already written for validation purpose and for fixing bugs.
 
 ## Who 
 
@@ -85,7 +113,10 @@ singing or dancing about it.
 From a TDD preceptive we should write tests before writing the code.
 We have just learned that it is a best practice to write units test before fixing a bug especially when we are maintaining code.
 
-## How should we write unit tests?
+## How should we use TDD ?
+Ideally 
+
+*A programmer taking a TDD approach refuses to write a new function until there is first a test that fails because that function isn’t present. In fact, they refuse to add even a single line of code until a test exists for it.*
 
 Every decent programing language has a unit test framework.
 for python, we have unittest , pytest and flasktest just to name some.
