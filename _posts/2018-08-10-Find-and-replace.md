@@ -1,8 +1,7 @@
-find replace the pyhtonic write_of_or_self_payed
+find replace in atom 
 
-data['attribute']
-
-with data.get('attribute')
+The problem 
+we need to replace data['attribute'] with data.get('attribute') in atom text editor or another test editor.
 
 find data\[(\S+)\]
 
