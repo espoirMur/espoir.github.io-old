@@ -1,0 +1,38 @@
+## Test Driven development 
+
+I'm writing this post to summarize what I'm learning about TDD
+
+Test driven development or TDD is a style of programming which refer to the practice of writing unit test before writing code.
+
+For the first time the test should fail, and after failing you write simple code to make the code pass, and refrector it to make 
+it work as you want.
+
+Developers know the cycle as _red , green , refractor_.
+![pictures/TDD.png](TDD cycle (SOurce hacker noom))
+
+As said by __Rudyard Kipling__ following the story [http://members.optusnet.com.au/charles57/Creative/Techniques/elephants_child.htm](*__"Elephant's Child"__* in *__"Just So Stories"__*)
+
+> I keep six honest serving-men
+> (They taught me all I knew);
+> Their names are *What* and *Why* and *When*
+> And *How* and *Where* and *Who*.
+
+So everytime We are studying something new, We should always answer those 6 questions.
+
+So let Go
+
+## Who 
+
+### Who create TDD ?
+
+Everytime you are reading about TDD, you should came acrros this name : *Kent Beck*
+
+Here is what is said in [https://en.wikipedia.org/wiki/Kent_Beck](his wikipedia):
+
+> Kent Beck (born 1961) is an American software engineer and the creator of extreme programming,
+> a software development methodology that eschews rigid formal specification for a collaborative and iterative design process.
+> Beck was one of the 17 original signatories of the Agile Manifesto,
+> the founding document for agile software development. 
+> *__Extreme and Agile methods are closely associated with Test-Driven Development (TDD)__*, 
+> of which Beck is perhaps the leading proponent.
+
