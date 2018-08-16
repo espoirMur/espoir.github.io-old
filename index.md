@@ -17,7 +17,7 @@
 <body>
     <main>
         <div class="intro">Hello, I'm Espoir!</div>
-        <div class="tagline">lifelong Learner |Aspiring Data-Scientist | web developer | Meetups organiser </div>
+        <div class="tagline">lifelong Learner | Software Engineer|Aspiring Data-Scientist | Meetups organiser </div>
         <div class="icons-social">
             <a target="_blank" href="https://github.com/espoirMur"><i class="fab fa-github"></i></a>
             <a target="_blank" href="https://twitter.com/EspyMur"><i class="fab fa-twitter"></i></a>
