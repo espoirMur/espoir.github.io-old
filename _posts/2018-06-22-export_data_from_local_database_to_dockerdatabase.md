@@ -18,7 +18,7 @@ once the file is exported it need to be copied in the docker container where the
 
 Here is the comand i use to copy a file from a local machine to a docker containner .
 ```
-docker cp file_name container_id:/new_file_name
+docker cp file_name $(docker-compose ps -q postgres):/new_file_name
 ```
 Once it's exported in the docker container , the file need to be imported to the database here.
 
