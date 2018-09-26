@@ -27,7 +27,7 @@ Once it's exported in the docker container , the file need to be imported to the
 inisde the docker container database make sure the database is created and not populated yet.
 made a mistake to populate it via sql alchemy yesterday so I was obliged to delete it and recreate evrything using the dump file.
 
-(link)[https://stackoverflow.com/a/2732521/4683950] to import .
+[link](https://stackoverflow.com/a/2732521/4683950) to import .
 
 here is the syntax :
 
