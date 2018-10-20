@@ -1,7 +1,7 @@
-find replace in atom 
+find replace in atom text editor
 
-The problem 
-we need to replace data['attribute'] with data.get('attribute') in atom text editor or another test editor.
+The problem
+we need to replace data['attribute'] with data.get('attribute') in atom text editor or another text editor.
 
 find data\[(\S+)\]
 
@@ -11,7 +11,7 @@ data : data
 
 () : group
 
-\S+ white space characheter
+\S+ non-white space characheter
 
 replace
 
