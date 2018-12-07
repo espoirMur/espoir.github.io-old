@@ -7,12 +7,13 @@ How i set up my ubuntu dev machine for web development with python , javascript 
 
 `
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+
 `
 2. Intsall git 
 
-
 `sudo apt-get install git 
 `
+
 3. Install VS code editor
 
 `snap install vscode`
@@ -23,17 +24,21 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 `apt-get install curl`
 
+
 4.b add ppa :
 
 `curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
 `
+
 4.c Run the script :
 
 `sudo sh nodesource_setup.sh
 `
+
 4.d Install node
 
 `apt-get install -y nodejs`
+
 
 5. Install python 
 
@@ -42,6 +47,7 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 Install also virtual env 
 
 `pip install virtualenv`
+
 
 6. Install postgres
 
