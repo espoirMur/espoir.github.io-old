@@ -33,6 +33,7 @@ open the file edit it according to you needs .
  
  once your terminal is now customized and fully functional we can continue istalling other tools
  
+ - For customization i prefer using dracula theme for both vscode and iterm, it like a universal theme
  
  third step is to install package manager home brew:
  About homebrew:
