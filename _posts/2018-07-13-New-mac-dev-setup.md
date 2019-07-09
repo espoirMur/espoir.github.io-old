@@ -35,17 +35,17 @@ open the file edit it according to you needs .
  
  - For customization i prefer using dracula theme for both vscode and iterm, it like a universal theme
  
- third step is to install package manager home brew:
+ third step is to install package manager homebrew:
  About homebrew:
  
- __Homebrew  a free and open-source software package management system 
- that simplifies the installation of software on Apple's macOS operating system__
+ _Homebrew  a free and open-source software package management system 
+ that simplifies the installation of software on Apple's macOS operating system_
  
  I will need this software to install most of the software I'm going to work with.
  
  From [their official site](https://brew.sh/)  it's said that :
  
-__ Homebrew installs the stuff you need that Apple didn’t.__
+__Homebrew installs the stuff you need that Apple didn’t._
 
 that is the reason why it's not embedeed directly with ios like apt-get in linux or ubuntu os.
 
@@ -57,27 +57,51 @@ As homebrew is written in ruby we will install it with this simple comand:
 ```
 Once homebrew is installed we can install everything according to your needs.
 
-For me as I'm a pyhton developer I will install everything related to python :
+### Install software (Desktop Applications)
 
-to start let install python3 and python 2
-
-
-for python 2 i use 
-```
-brew install python@2
-```
-
-for python 3 I use 
+I run the following comand to install the first set of softwares I need to work on my new laptop:
 
 ```
-brew install python
+ brew cask install slack zoomus google-chrome visual-studio-code spotify
 ```
 
+They are the most important software I use :
 
-once python is installed I will install node and postgressql and docker
+- slack is my office
+- zoom is my phone
+- google chrome and  vscode are my axes 
+- and spotify
+They are the most important software for me , evrything else can be installed from google chrome
 
-node and postgres can be installed via brew but for docker i will need to download a dmg directly.
+### Install Software developers tools
 
-The last software for my developement are text editor : i used atom and sublime text for developêment .
-they can be downloaded directly from their site.
-the next job will be to customise them for both python and javascript development
+#### Python
+For me as,  I'm a pyhton developer I will install everything related to python :
+
+- let install python3 and python 2
+
+
+- python 2 I  use ```brew install python@2```
+
+- python 3 I'm a big fan of python 3.6.5 because for now it's the only version supported by tensorflow.
+
+``` brew install --ignore-dependencies https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb ```
+#### JavaScript
+
+Node the lastest version ```brew install node```
+
+#### iterm
+
+The default developer terminal is not for developer , I prefer to use iterm , here is how we install it :
+
+```brew cask install iterm2```
+
+
+### Customize Terminal 
+
+Let me our terminal look like a developer terminal 
+
+One the big mistake I made from my last laptop was not to save my .zshrc configuration file , and I pay the high price today because I have to customise it twice and write all my alias.
+
+For a fast configuration I decided to use this [blog post](https://dev.to/aspittel/my-terminal-setup-iterm2--zsh--30lm) , it's very helpfull 
+
