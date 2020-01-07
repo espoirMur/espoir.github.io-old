@@ -76,7 +76,7 @@ Once homebrew is installed we can install everything according to your needs.
 I run the following comand to install the first set of softwares I need to work on my new laptop:
 
 ```
- brew cask install slack zoomus google-chrome visual-studio-code spotify
+ brew cask install slack zoomus google-chrome visual-studio-code spotify google-backup-and-sync
 ```
 
 They are the most important software I use :
@@ -119,3 +119,14 @@ One the big mistake I made from my last laptop was not to save my .zshrc configu
 
 For a fast configuration I decided to use this [blog post](https://dev.to/aspittel/my-terminal-setup-iterm2--zsh--30lm) , it's very helpfull 
 
+### Sycnhronise all terminial and .zshrc file
+
+To avoid rewriting the settings each time , I setup a new macbook laptop , let me keep them synchronize to google drive.
+
+- I made sure I have Google drive sync installed in my laptop
+- Check if auto sync with the file is enable
+
+-  Create a folder for configuration with : ```mkdir -p ~/Google\ Drive/ohmyzsh-conf```
+-  Make a copy for the existing file in case : ``` cp ~/.zshrc ~/.zshrc.copy ```
+-  Move the original file to the google drive folder : ``` mv .zshrc ~/Google\ Drive/ohmyzsh-conf/.zshrc ```
+-  Make a symbolic link from that file with the original configuration : ```ln -s ~/Google\ Drive/ohmyzsh-conf/.zshrc .zshrc```
