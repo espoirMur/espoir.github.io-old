@@ -124,8 +124,7 @@ For a fast configuration I decided to use this [blog post](https://dev.to/aspitt
 To avoid rewriting the settings each time , I setup a new macbook laptop , let me keep them synchronize to google drive.
 
 - I made sure I have Google drive sync installed in my laptop
-- Check if auto sync with the file is enable
-
+- Check if a folder Called Google Drive is in The home directory
 -  Create a folder for configuration with : ```mkdir -p ~/Google\ Drive/ohmyzsh-conf```
 -  Make a copy for the existing file in case : ``` cp ~/.zshrc ~/.zshrc.copy ```
 -  Move the original file to the google drive folder : ``` mv .zshrc ~/Google\ Drive/ohmyzsh-conf/.zshrc ```
