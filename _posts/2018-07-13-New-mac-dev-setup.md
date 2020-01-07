@@ -25,27 +25,26 @@ follow [this link](http://osxdaily.com/2014/02/12/install-command-line-tools-mac
 ### Terminal
 
 The second step is to get rid of the default mac terminal  and install a powerfull and customizable terminal;
-my choice is [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
+my choice is  a combinaison of zsh and [iterm2](https://www.iterm2.com/documentation.html), for [zsh](https://www.zsh.org/) customization I use [oh-my-zsh](https://ohmyz.sh/)
 
 let install it we need curl :
 
+- For iterm2
+``` brew cask install iterm2 ```
+
+- For Zsh  and zsh completions
+``` brew install zsh zsh-completions  ```
+
+- And oh my zsh c: 
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-and now let customize it to make it a beautifull terminal !
 
-default configuration can be edited and customized from the file .zshrc
+And now we can customize it as we need 
 
+The default configuration can be edited and customized from the file .zshrc
+More about the terminal configuration can be found [here](https://dev.to/deepu105/configure-a-beautiful-terminal-on-unix-with-zsh-4mcb).
 
-```
-nano ~/.zshr
-```
-
-open the file edit it according to you needs .
- you can pick some tips from [this guide](https://medium.com/@tretuna/macbook-pro-web-developer-setup-from-clean-slate-to-dev-machine-1befd4121ba8)
- 
- once your terminal is now customized and fully functional we can continue istalling other tools
- 
  - For customization i prefer using dracula theme for both vscode and iterm, it like a universal theme
  
 ### Package Manager Homebrew
