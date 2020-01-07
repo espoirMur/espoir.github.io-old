@@ -88,7 +88,7 @@ They are the most important software I use :
 - and spotify
 They are the most important software for me , evrything else can be installed from google chrome
 
-## Programing Software
+## Programing Softwares
 
 ### Python
 For me as,  I'm a pyhton developer I will install everything related to python :
@@ -116,7 +116,7 @@ The default developer terminal is not for developer , I prefer to use iterm , he
 
 Let me our terminal look like a developer terminal 
 
-One the big mistake I made from my last laptop was not to save my .zshrc configuration file , and I pay the high price today because I have to customise it twice and write all my alias.
+One the big mistake I made from my last laptop was not to save my .zshrc configuration file , and I pay the high price today because I have to customize it twice and write all my alias.
 
 For a fast configuration I decided to use this [blog post](https://dev.to/aspittel/my-terminal-setup-iterm2--zsh--30lm) , it's very helpfull 
 
