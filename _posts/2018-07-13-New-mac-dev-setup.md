@@ -2,9 +2,9 @@ This guide helps to setup a new macbook and make it ready for software developme
 
 ## Make it yours : (Change the Laptop Name):
 
-I use the following command to change the macbook name in case it's promping a wrong username
+I use the following command to change the macbook name in case it's promping a wrong username:
 
-
+```sudo scutil --set HostName name-you-want```
 
 
 ## Developers Tools 
