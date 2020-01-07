@@ -1,15 +1,28 @@
+This guide helps to setup a new macbook and make it ready for software development.
 
+## Make it yours : (Change the Laptop Name):
+
+I use the following command to change the macbook name in case it's promping a wrong username
+
+
+
+
+## Developers Tools 
+
+### Xcode 
 
 The first step is to install developer tools on the new laptop wihout installing Xcode (it's very large cannot afford to download it)
 
 - Open the terminal
-type the following one and follow the prompt :
+- type the following one and follow the prompt :
 
 ```
 xcode-select --install
 ```
 
 follow [this link](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/) for a precise step by step guide .
+
+### Terminal
 
 The second step is to get rid of the default mac terminal  and install a powerfull and customizable terminal;
 my choice is [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
@@ -35,8 +48,10 @@ open the file edit it according to you needs .
  
  - For customization i prefer using dracula theme for both vscode and iterm, it like a universal theme
  
- third step is to install package manager homebrew:
- About homebrew:
+### Package Manager Homebrew
+
+Third step is to install package manager homebrew:
+About homebrew:
  
  _Homebrew  a free and open-source software package management system 
  that simplifies the installation of software on Apple's macOS operating system_
@@ -57,7 +72,7 @@ As homebrew is written in ruby we will install it with this simple comand:
 ```
 Once homebrew is installed we can install everything according to your needs.
 
-### Install software (Desktop Applications)
+## Useful Softwares
 
 I run the following comand to install the first set of softwares I need to work on my new laptop:
 
@@ -73,9 +88,9 @@ They are the most important software I use :
 - and spotify
 They are the most important software for me , evrything else can be installed from google chrome
 
-### Install Software developers tools
+## Programing Software
 
-#### Python
+### Python
 For me as,  I'm a pyhton developer I will install everything related to python :
 
 - let install python3 and python 2
